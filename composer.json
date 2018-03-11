@@ -1,0 +1,17 @@
+{
+    "name": "siezi/phile-debugbar",
+    "type": "phile-plugin",
+    "description": "Add PHP Debug Bar to PhileCMS",
+    "license": "MIT",
+    "keywords": ["phile", "debugbar"],
+    "authors": [
+        {
+            "name": "Schlaefer",
+            "email": "openmail+sourcecode@siezi.com"
+        }
+    ],
+    "require": {
+        "phile-cms/phile": "^1.9",
+        "middlewares/debugbar": "^1.0"
+    }
+}
