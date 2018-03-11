@@ -1,6 +1,6 @@
 <?php
 
-namespace Phile\Plugin\Siezi\Debugbar;
+namespace Phile\Plugin\Siezi\PhileDebugbar;
 
 use Phile\Core\Container;
 use Phile\Plugin\AbstractPlugin;
