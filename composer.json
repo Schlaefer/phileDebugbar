@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "phile-cms/phile": "^1.10 || dev-develop" ,
+        "phile-cms/phile": "^1.10 || dev-develop",
         "middlewares/debugbar": "^1.0"
     },
     "require-dev": {
