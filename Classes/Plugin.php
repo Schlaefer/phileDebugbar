@@ -14,6 +14,10 @@ class Plugin extends AbstractPlugin
     protected $lastEventKey;
 
     protected $lastData;
+
+    protected $settings = [
+        'assetRootUrl' => '/lib/vendor/maximebf/debugbar/src/DebugBar/Resources/'
+    ];
     
     protected $events = [
         'phile.core.middleware.add' => 'addMiddleware',
@@ -46,7 +50,7 @@ class Plugin extends AbstractPlugin
     public function addMiddleware($eventData)
     {
         $baseUrl = $this->phileConfig->get('base_url');
-        $assets = $baseUrl . '/lib/vendor/maximebf/debugbar/src/DebugBar/Resources/';
+        $assets = $baseUrl . $this->settings['assetRootUrl'];
         $this->debugBar->getJavascriptRenderer()->setBaseUrl($assets);
 
         $middleware = new \Middlewares\Debugbar($this->debugBar);
@@ -59,16 +63,17 @@ class Plugin extends AbstractPlugin
         $this->phileConfig = $eventData['class'];
     }
 
-    public function setConfig($eventData)
+    public function setConfig()
     {
         $collector = new \DebugBar\DataCollector\ConfigCollector($this->phileConfig->toArray());
         $this->debugBar->addCollector($collector);
     }
 
-    public function registerTimeline() {
+    public function registerTimeline()
+    {
     }
 
-    public function on($eventKey, $data = NULL)
+    public function on($eventKey, $data = null)
     {
         $this->debugBar['time']->stopMeasure($this->lastEventKey, $this->lastData);
         $this->debugBar['time']->startMeasure($eventKey, $eventKey);
