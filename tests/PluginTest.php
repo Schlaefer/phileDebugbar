@@ -19,7 +19,7 @@ class PluginTest extends TestCase
         $response = $this->createPhileResponse($core, $request);
 
         $body = (string)$response->getBody();
-        $this->assertContains('var phpdebugbar = new PhpDebugBar.DebugBar();', $body);
+        $this->assertStringContainsString('var phpdebugbar = new PhpDebugBar.DebugBar();', $body);
     }
 
     public function testDebugFct()
@@ -38,6 +38,6 @@ class PluginTest extends TestCase
         $response = $this->createPhileResponse($core, $request);
 
         $body = (string)$response->getBody();
-        $this->assertContains($item, $body);
+        $this->assertStringContainsString($item, $body);
     }
 }

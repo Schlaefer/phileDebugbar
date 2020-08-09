@@ -11,10 +11,10 @@
         }
     ],
     "require": {
-        "phile-cms/phile": "^1.10 || dev-develop",
+        "phile-cms/phile": "^1.11 || dev-develop",
         "middlewares/debugbar": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^8.0"
     }
 }
