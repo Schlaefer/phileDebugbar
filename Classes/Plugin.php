@@ -18,7 +18,7 @@ class Plugin extends AbstractPlugin
     protected $settings = [
         'assetRootUrl' => '/lib/vendor/maximebf/debugbar/src/DebugBar/Resources/'
     ];
-    
+
     protected $events = [
         'phile.core.middleware.add' => 'addMiddleware',
         'config_loaded' => 'getConfig',
@@ -73,7 +73,7 @@ class Plugin extends AbstractPlugin
     {
     }
 
-    public function on($eventKey, $data = null)
+    public function on($eventKey, $data = null): void
     {
         $this->debugBar['time']->stopMeasure($this->lastEventKey, $this->lastData);
         $this->debugBar['time']->startMeasure($eventKey, $eventKey);
