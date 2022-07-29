@@ -14,7 +14,7 @@ class PluginTest extends TestCase
                 'siezi\\phileDebugbar' => ['active' => true]
             ]
         ]);
-        $core = $this->createPhileCore(null, $config);
+        $core = $this->createPhileCore(null, $config)->bootstrap();
         $request = $this->createServerRequestFromArray();
         $response = $this->createPhileResponse($core, $request);
 

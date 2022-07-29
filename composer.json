@@ -3,7 +3,11 @@
     "type": "phile-plugin",
     "description": "Add PHP Debug Bar to PhileCMS",
     "license": "MIT",
-    "keywords": ["phile", "debugbar"],
+    "minimum-stability": "dev",
+    "keywords": [
+        "phile",
+        "debugbar"
+    ],
     "authors": [
         {
             "name": "Schlaefer",
@@ -11,10 +15,15 @@
         }
     ],
     "require": {
-        "phile-cms/phile": "^1.11 || dev-develop",
-        "middlewares/debugbar": "^1.0"
+        "phile-cms/phile": "^2.0|dev-develop",
+        "middlewares/debugbar": "^2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0"
+        "phpunit/phpunit": "^9.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "phile-cms/plugin-installer-plugin": true
+        }
     }
 }
